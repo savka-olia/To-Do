@@ -1,1 +1,11 @@
 <h1>Tasks#new</h1>
+
+<%= form_for @task do |f| %>
+  <%= f.label "Title:" %>
+  <%= f.text_field :title %><br>
+  
+  <%= f.label "Details:" %>
+  <%= f.text_area :details %><br>
+
+  <%= f.submit %><br>
+<% end %>
