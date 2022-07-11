@@ -4,6 +4,11 @@
   
   <%= f.label "Details:" %>
   <%= f.text_area :details %><br>
+  
+  <% if request.path.include?("edit") %>
+    <%= f.label "Completed?" %>
+    <%= f.check_box :completed %><br>
+  <% end %>
 
   <%= f.submit %><br>
 <% end %>

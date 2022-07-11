@@ -1,5 +1,5 @@
 class TasksController < ApplicationController 
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:show, :edit, :update, :destroy, :complete]
 
   def index
     @tasks = Task.all
@@ -26,21 +26,27 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task.destroy
+    @task.destroy!
     redirect_to tasks_path
   end
 
   def update
     if @task.update(task_params)
-      redirect_to tasks_path
+      flash[:notice] = "Your task was updated successfully"
+      redirect_to @task
     else
       render 'edit'
     end
   end
 
+  def complete
+    @task.update_attribute(:completed, params[:completed])
+    redirect_back fallback_location: root_path
+  end
+
   private
   def task_params
-    params.require(:task).permit(:title, :details)
+    params.require(:task).permit(:title, :details, :completed)
   end
 
   def set_task
