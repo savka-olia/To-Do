@@ -2,21 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .container{
-    max-width: 500px;
+  max-width: 500px;
 }
   
 li.list-group-item{
-  background-color: #423a6f;
-  color: #F8F9FA;
   margin: 1px;
 }
 
 li a{
   text-decoration: none;
-  color: #F8F9FA;
+  color: #003468;
 }
 
 li a:hover{
-  color:#c9c9c9;
+  color: #041629;
   text-decoration: none;
 }
