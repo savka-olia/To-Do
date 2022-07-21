@@ -1,14 +1,19 @@
-<%= form_for @task do |f| %>
-  <%= f.label "Title:" %>
-  <%= f.text_field :title %><br>
-  
-  <%= f.label "Details:" %>
-  <%= f.text_area :details %><br>
-  
-  <% if request.path.include?("edit") %>
-    <%= f.label "Completed?" %>
-    <%= f.check_box :completed %><br>
+<div class="form-container">
+  <%= form_with(model: @task, local: true) do |f| %>
+    <div class="form-outline mb-4">
+      <%= f.text_field :title, placeholder: "Title" %>
+    </div>
+    <div class="form-outline mb-4">
+      <%= f.text_area :description, class:"form-control", rows: 4, placeholder: "Description of task" %>
+    </div>
+    <div class="form-check d-flex justify-content-center mb-4">
+      <%= f.check_box :completed %>
+      <label class="form-check-label">
+        Completed?
+      </label>
+    </div>
+    <%= f.submit "Update", class: "btn btn-primary btn-block mb-4" %> <br />
+      <%= link_to '[ Cancel and return to todos listing ]', tasks_path, class: "text-info" %>
+    </div>
   <% end %>
-
-  <%= f.submit %><br>
-<% end %>
+</div>
