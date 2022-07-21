@@ -7,16 +7,20 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = Task.new
+    @task = current_user.tasks.build
   end
 
   def create
-    @task = Task.new(task_params)
-    if @task.save
-      flash[:notice] = "Task was created successfully."
-      redirect_to tasks_path
-    else
-      render 'new'
+    @task = current_user.tasks.build(task_params)
+
+    respond_to do |format|
+      if @task.save
+        format.html { redirect_to task_url(@task), notice: "Task was successfully created." }
+        format.json { render :show, status: :created, location: @task }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @task.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -32,11 +36,14 @@ class TasksController < ApplicationController
   end
 
   def update
-    if @task.update(task_params)
-      flash[:notice] = "Your task was updated successfully"
-      redirect_to @task
-    else
-      render 'edit'
+    respond_to do |format|
+      if @task.update(friend_params)
+        format.html { redirect_to friend_url(@task), notice: "Task was successfully updated." }
+        format.json { render :show, status: :ok, location: @task }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @task.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -47,7 +54,7 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:title, :details, :completed)
+    params.require(:task).permit(:title, :details, :completed, :user_id)
   end
 
   def set_task
