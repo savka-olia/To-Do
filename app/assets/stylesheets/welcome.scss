@@ -1,11 +1,86 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;1,200&family=Mochiy+Pop+One&display=swap');
+
+
 .bg-cover {
   background-image: asset-url("microsoft-to-do-featured-image-scaled.jpg");
   background-size: cover;
+  
 }
 
+html,
 body {
-  min-height: 100vh;
+  background-color: #F7EDE2;
+  height: 100%;
+}
+
+#page-content{
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.header h1{
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 0 0 50px; 
+  text-align: revert; 
+  text-shadow: 2px 1px 2px #0000006b;
+}
+
+.weclcome-cont h2{
+  color: #638078;
+  font-family: 'Mochiy Pop One', sans-serif;
+  font-size: 30px;
+  padding-bottom: 5px;
+}
+
+.weclcome-cont strong{
+  color: #638078;
+  font-size: 18px;
+}
+
+// button
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+/* CSS */
+.button-40 {
+  background-color: #F28482;
+  border: 1px solid transparent;
+  border-radius: .75rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  padding: .75rem 1.2rem;
+  text-align: center;
+  text-decoration: none #6B7280 solid;
+  text-decoration-thickness: auto;
+  transition-duration: .2s;
+  transition-property: background-color,border-color,color,fill,stroke;
+  transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+  width: auto;
+}
+
+.button-40:hover {
+  background-color: #d17877;
+  color: #FFFFFF;
+}
+
+.button-40:focus {
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+  .button-40 {
+    padding: .75rem 1.5rem;
+  }
 }
