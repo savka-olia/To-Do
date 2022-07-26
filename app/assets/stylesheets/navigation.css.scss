@@ -1,0 +1,45 @@
+.navbar{
+  background-color: #FDB1A4;
+}
+
+.navbar-nav{
+  padding: 10px;
+}
+
+.navbar-light .navbar-brand {
+  color: #586d67;
+  font-family: 'Mochiy Pop One', sans-serif;
+  font-size: 30px;
+}
+
+.navbar-light .navbar-brand:hover {
+  color: #33413d;
+}
+
+i{
+  font-size: 25px;
+  color: #586d67;
+}
+
+.dropdown-menu{
+  background-color: #FDB1A4;
+}
+
+.dropdown-item{
+  color: #586d67;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  color: #33413d;
+  text-decoration: none;
+  background-color: #eea89c;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #586d67;
+  font-size: 20px;
+}
+
+.navbar-light .navbar-nav .nav-link:focus {
+  color: #33413d; 
+}

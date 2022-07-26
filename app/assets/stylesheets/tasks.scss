@@ -5,12 +5,17 @@
   max-width: 500px;
 }
 
+h1{
+  margin-top: 15px;
+  color: #638078;
+  font-family: 'Mochiy Pop One', sans-serif;
+}
 
   
 li.list-group-item{
   margin: 2px;
   height: 70px;
-  background-color: #F6BD60;
+  background-color: #FDB1A4;
 }
 
 li a{
@@ -31,7 +36,7 @@ ul{
 
 .new-task-btn{
   // margin-top: 10px;
-  background-color: #F6BD60;
+  background-color: #FDB1A4;
   border: 1px solid transparent;
   border-radius: .75rem;
   box-sizing: border-box;
@@ -46,6 +51,6 @@ ul{
 }
 
 .new-task-btn:hover{
-  background-color: #e2b46b;
-  color: #33413d;
+  background-color: #eea89c;
+  color: #405a53;
 }
