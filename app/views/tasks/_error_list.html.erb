@@ -1,5 +1,12 @@
-<ul class="error-list">
-  <% @task.errors.full_messages.each do |error| %>
-    <li><%= error %></li>
-  <% end %>
-</ul>
+<% if   @task.errors.any? %>
+  <div class="alert error-msg" role="alert">
+    <ul class="error-list">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <% @task.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
