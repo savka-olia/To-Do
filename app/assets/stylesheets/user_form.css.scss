@@ -1,13 +1,5 @@
-.btn-primary{
-  background-color:#F28482;
-  color: #ffffff;
-  font-size: 18px;
-  border-color:#F28482;
-}
-
-.btn-primary:hover {
-  color: #fff;
-  background-color:#da7877;
-  border-color:#da7877;
-  box-shadow: 0 0 0 0.2rem rgba(241, 216, 236, 0.5);
+.form-control:focus { 
+  border: 2px solid #f2848260;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(245, 197, 221, 0.25);
 }
