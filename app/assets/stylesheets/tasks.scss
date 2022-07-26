@@ -12,19 +12,20 @@ h1{
 }
 
   
-li.list-group-item{
-  margin: 2px;
+.todos li.list-group-item{
+  margin: 5px;
   height: 70px;
   background-color: #FDB1A4;
 }
 
-li a{
+.todos li a{
   text-decoration: none;
   color: #586d67;
+  font-size: 20px;
   
 }
 
-li a:hover{
+.todos li a:hover{
   color: #33413d;
   text-decoration: none;
   cursor: pointer;
@@ -35,7 +36,6 @@ ul{
 }
 
 .new-task-btn{
-  // margin-top: 10px;
   background-color: #FDB1A4;
   border: 1px solid transparent;
   border-radius: .75rem;
@@ -43,8 +43,7 @@ ul{
   color: #586d67;
   cursor: pointer;
   flex: 0 0 auto;
-  font-size: 1.125rem;
-  font-weight: 600;
+  font-size: 20px;
   line-height: 1.5rem;
   padding: .75rem 1.2rem;
   text-align: center;
@@ -53,4 +52,10 @@ ul{
 .new-task-btn:hover{
   background-color: #eea89c;
   color: #405a53;
+}
+
+.background-img{
+  background: asset-url("active.png");
+  background-repeat: no-repeat;
+  background-position: bottom 0px right 7px;
 }

@@ -1,15 +1,18 @@
-<div class="container">
-  <h1 class="mb-4 text-center">To Do:</h1>
-  <ul class="list-group todos mx-auto text-light">
-    <% @tasks.each do |task| %>
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <strong><%= link_to task.title, task_path(task) %></strong>
-        <%= link_to check_box_tag(:task, :completed, task.completed), 
-                      "/tasks/#{task.id}/complete/#{!task.completed}" %>
-      </li>
-    <% end %>
-  </ul>
-  <%= link_to "New Task", new_task_path, class:'new-task-btn' %>
+<div id="background-img" class="background-img" >
+  <div class="container text-center">
+    <h1 class="mb-4 text-center">To Do:</h1>
+    <ul class="list-group todos mx-auto text-light">
+      <% @tasks.each do |task| %>
+        <li class="list-group-item d-flex justify-content-between">
+          <%= link_to task.title, task_path(task) %>
+          <%= link_to check_box_tag(:task, :completed, task.completed), 
+                        "/tasks/#{task.id}/complete/#{!task.completed}" %>
+        </li>
+      <% end %>
+    </ul>
+    <%= link_to "New Task", new_task_path, class:'new-task-btn' %>
+  </div>
 </div>
+
 
 

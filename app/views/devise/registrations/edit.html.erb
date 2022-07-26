@@ -1,33 +1,35 @@
-<div class="container">
-  <h1 class="text-center">Edit <%= resource_name.to_s.humanize %></h1>
+<div id="background-img" class="background-img" >
+  <div class="container">
+    <h1 class="text-center">Edit <%= resource_name.to_s.humanize %></h1>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="form-outline mb-4">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Email" %>
-    </div>
+      <div class="form-outline mb-4">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Email" %>
+      </div>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="form-outline mb-4">
+        <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder:"New Password (leave blank if don't want to change it)"  %>
+      </div>
+
+      <div class="form-outline mb-4">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder:"Confirm New Password"%>
+      </div>
+
+      <div class="form-outline mb-4">
+        <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control", placeholder:"Current Password" %>
+      </div>
+
+      <div class="actions p-2 d-flex justify-content-between">
+        <%= f.submit "Update", class:"button-40" %>
+        <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, class:"button-40", method: :delete %>
+        <%= link_to "Back", :back, class:"button-40" %>
+      </div>
     <% end %>
-
-    <div class="form-outline mb-4">
-      <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder:"New Password (leave blank if don't want to change it)"  %>
-    </div>
-
-    <div class="form-outline mb-4">
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder:"Confirm New Password"%>
-    </div>
-
-    <div class="form-outline mb-4">
-      <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control", placeholder:"Current Password" %>
-    </div>
-
-    <div class="actions p-2 d-flex justify-content-between">
-      <%= f.submit "Update", class:"button-40" %>
-      <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, class:"button-40", method: :delete %>
-      <%= link_to "Back", :back, class:"button-40" %>
-    </div>
-  <% end %>
+  </div>
 </div>
