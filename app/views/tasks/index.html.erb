@@ -23,6 +23,9 @@
       <% end %>
     </ul>
     <%= link_to "New Task", new_task_path, class:'new-task-btn' %>
+    <div class="flickr_pagination">
+      <%= will_paginate @tasks %>
+    </div>
   </div>
 </div>
 
