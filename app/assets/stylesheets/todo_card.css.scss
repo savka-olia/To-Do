@@ -1,3 +1,4 @@
+
 .card {
   margin-left: auto;
   margin-right: auto;
@@ -31,6 +32,11 @@
 
 input[type="checkbox"] {
   width: 17px;
-  margin: 3px;
   height: 17px;
+}
+
+.alert-warning{
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -1,4 +1,7 @@
 <div id="background-img" class="background-img" >
+  <% if notice %>
+      <%= render "layouts/alerts" %>
+  <% end %>
   <div class="card-container">
     <div class="card text-center">
       <div class="card-body">
