@@ -12,16 +12,12 @@ class TasksController < ApplicationController
 
   def create
     @task = current_user.tasks.build(task_params)
-
-    respond_to do |format|
       if @task.save
-        format.html { redirect_to task_url(@task), notice: "Task was successfully created." }
-        format.json { render :show, status: :created, location: @task }
+        flash[:notice] = "Task was created successfully."
+        redirect_to tasks_path
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @task.errors, status: :unprocessable_entity }
+        render 'new'
       end
-    end
   end
 
   def edit

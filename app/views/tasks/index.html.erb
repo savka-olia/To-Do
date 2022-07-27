@@ -5,9 +5,18 @@
       <% @tasks.each do |task| %>
         <li class="list-group-item d-flex justify-content-between">
           <%= link_to task.title, task_path(task) %>
-          <%= link_to check_box_tag(:task, :completed, task.completed), 
+           <div class="task-buttons">
+              <%= link_to check_box_tag(:task, :completed, task.completed), 
                         "/tasks/#{task.id}/complete/#{!task.completed}" %>
+              <%= link_to edit_task_path(task) do %>
+                <i class="bi bi-pencil"></i>
+              <% end %>
+              <%= link_to task, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <i class="bi bi-trash3"></i>
+              <% end %>
+           </div>
         </li>
+        
       <% end %>
     </ul>
     <%= link_to "New Task", new_task_path, class:'new-task-btn' %>

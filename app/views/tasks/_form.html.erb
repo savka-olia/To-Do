@@ -13,9 +13,9 @@
           Completed?
         </label>
       </div>
-      <div class="text-center">
+      <div class="text-center d-flex justify-content-center">
         <%= f.submit "Create", class: "button-40" %> <br />
-        <%= link_to '[ Cancel and return to todos listing ]', tasks_path, class: "text-info" %>
+        <%= link_to 'Cancel', tasks_path, class: "button-40" %>
       </div>
       </div>
     <% end %>
